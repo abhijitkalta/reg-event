@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8" >
+    <title>Event Details</title>
+    <link type="text/css" rel=stylesheet href="/app/app.css" >
+    <link type="text/css" rel=stylesheet href="/app/bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div ng-controller="EditEventController">
+<div class="container">
+<h2>New Event</h2>
+<hr />
+<form role="form">
+  <div class="form-group">
+    <label for="eventName">Event Name:</label>
+    <input type="text" ng-model="event.name" class="form-control" id="eventName" placeholder="Name of your Event">
+  </div>
+  <div class="form-group">
+    <label for="eventDate">Event Date:</label>
+    <input type="text" ng-model="event.date" class="form-control" id="eventDate" placeholder="Date of your Event">
+  </div>
+  <div class="form-group">
+    <label for="eventTime">Event Time:</label>
+    <input type="text" ng-model="event.time" class="form-control" id="eventTime" placeholder="Time of your Event">
+  </div>
+  <div class="form-group">
+    <label for="eventLocation">Event Location:</label>
+    <input type="text" ng-model="event.address" class="form-control" id="eventLocation" placeholder="Location of your Event">
+      </br>
+    <input type="text" ng-model="event.city" class="form-control" id="eventCity" placeholder="City of your Event">
+    <input type="text" ng-model="event.province" class="form-control" id="eventProvince" placeholder="Province of your Event">
+  </div>
+  <button type="submit" ng-click="saveEvent(event)" class="btn btn-default">Submit</button>
+  <button type="button" ng-click="cancelEvent(event)" class="btn btn-default">Cancel</button>
+</form>
+    
+    
+</div>
+    
+<script src="/app/bower_components/angular/angular.min.js"></script>
+    
+    <!--Modules-->
+    <script src="/app/app.js" ></script>
+    
+    <!--Controllers-->
+    <script src="EditEventController.js"></script> 
+
+</div>  
+</body>    
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8" >
+    <title>Event Details</title>
+    <link type="text/css" rel=stylesheet href="/app/app.css" >
+    <link type="text/css" rel=stylesheet href="/app/bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Angular Boot</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="/app/NewEvent/NewEvent.html">Create Event</a></li>
+      </ul>
+    </div>
+    </div>
+    </nav>
+ <div ng-controller="EventController">
+         <div class="row">
+             <h2>{{event.name | uppercase}}</h2>
+        </div>  
+        <div class="row">
+            <div class="col-sm-4">
+            <div><strong>Date:</strong>{{event.date | date}}</div>
+            <div><strong>Time:</strong> {{event.time}}</div>
+            </div>
+            
+            <div class="col-sm-4">
+                <strong>Address:</strong>{{event.location.address }}</br>
+                <strong>City:</strong> {{event.location.city}},
+                <strong>Province:</strong> {{event.location.province}}
+            </div>
+        </div>
+    <hr/>
+        <h2>Sessions</h2>
+        <div class="panel-group">
+        <div class="panel panel-default" ng-repeat="session in event.sessions | orderBy: sortorder">
+        <div class="panel-heading">{{session.topic}}</div>
+        <div class="panel-body">
+                <ul class="list-group">
+                <li class="list-group-item"><strong>Author : </strong>{{session.name}}</li>
+                <li class="list-group-item"><strong>Duration : </strong>{{session.duration | duration}}</li>
+                </ul>
+        <div class="panel-footer">
+        <a href="#" class="btn btn-info btn-lg" ng-click="upVoteSession(session)">
+        <span class="glyphicon glyphicon-thumbs-up"></span> Like {{session.upVoteCount}}
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+</div>
+ </div>
+</div>
+
+                
+        
+    <script src="/app/bower_components/angular/angular.min.js"></script>
+    
+    <!--Modules-->
+    <script src="/app/app.js" ></script>
+    
+    <!--Controllers-->
+    <script src="EventController.js"></script> 
+
+    <!--Filters-->
+<script src="/app/components/version/interpolate-filter.js"></script>
+    
+</body>    
+</html>
