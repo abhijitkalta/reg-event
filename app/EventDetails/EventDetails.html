@@ -38,6 +38,13 @@
             </div>
         </div>
     <hr/>
+        <div class="dropdown">
+        <h4>Order By :</h4>
+        <select ng-model="sortorder">
+        <option value="topic">Topic</option>
+        <option value="name">Name</option>
+        </select>
+        </div>
         <h2>Sessions</h2>
         <div class="panel-group">
         <div class="panel panel-default" ng-repeat="session in event.sessions | orderBy: sortorder">
@@ -62,15 +69,21 @@
                 
         
     <script src="/app/bower_components/angular/angular.min.js"></script>
+    <script src="/app/bower_components/angular-resource/angular-resource.min.js" ></script>
     
     <!--Modules-->
     <script src="/app/app.js" ></script>
-    
+
+   
     <!--Controllers-->
     <script src="EventController.js"></script> 
 
+     <!--Services-->
+    <script src="/app/components/version/eventData.js"></script>
+    
+
     <!--Filters-->
-<script src="/app/components/version/interpolate-filter.js"></script>
+    <script src="/app/components/version/interpolate-filter.js"></script>
     
 </body>    
 </html>

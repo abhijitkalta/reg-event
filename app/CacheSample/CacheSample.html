@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8" >
+    <title>Cache Sample</title>
+    <link type="text/css" rel=stylesheet href="/app/app.css" >
+    <link type="text/css" rel=stylesheet href="/app/bower_components/bootstrap/dist/css/bootstrap.css">
+    
+</head>
+<body>
+<div ng-controller="CacheSampleController">
+<div class="container">
+<h2>Cache Event</h2>
+<hr />
+   <form class="form-inline" role="form">
+  <div class="form-group">
+    <label for="key">Key:</label>
+    <input type="text" class="form-control" id="key" ng-model="key">
+  </div>
+  <div class="form-group">
+    <label for="value">Value:</label>
+    <input type="text" class="form-control" id="value" ng-model="value">
+  </div>
+  <button type="button" class="btn btn-default" ng-click="addToCache(key, value)">Cache</button>
+</form>  
+<br />
+<hr />
+    <form role="form">
+  <div class="form-group">
+    <label for="cachedKey">Cached key:</label>
+    <input type="text" class="form-control" id="cachedKey" ng-model="cachedKey">
+  </div>
+    <div class="form-group">
+    <label for="outputValue">Cached value:</label>
+    <output type="text" class="form-control" id="outputValue" ng-bind="getFromCache(cachedKey)">
+  </div>
+    <button type="button" id="button2" class="btn btn-default" ng-click="cacheInfo()">Cache Info</button>
+    </form>
+    
+    <hr/>
+    <div >
+    <strong>{{text}}</strong>
+    </div>
+ </div>  
+    
+    
+   <script src="/app/bower_components/angular/angular.min.js"></script>
+   <script src="/app/bower_components/angular-resource/angular-resource.min.js"></script>
+    <!--Modules-->
+    <script src="/app/app.js"></script>
+    
+    <!--Controllers-->
+    <script src="CacheSampleController.js"></script> 
+    
+    <!--Services-->
+    <script src="/app/components/version/myCache.js"></script>  
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<div class='container'>
+<div class="panel-group">
+        <div class="panel panel-default" ng-repeat="session in event.sessions | orderBy: sortorder">
+        <div class="panel-heading">{{session.topic}}</div>
+        <div class="panel-body">
+                <ul class="list-group">
+                <li class="list-group-item"><strong>Author : </strong>{{session.name}}</li>
+                <li class="list-group-item"><strong>Duration : </strong>{{session.duration | duration}}</li>
+                </ul>
+        <div class="panel-footer">
+        <a href="#" class="btn btn-info btn-lg" ng-click="upVoteSession(session)">
+        <span class="glyphicon glyphicon-thumbs-up"></span> Like {{session.upVoteCount}}
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+</div>

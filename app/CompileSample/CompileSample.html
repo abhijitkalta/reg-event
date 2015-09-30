@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8" >
+    <title>Compile Sample</title>
+    <link type="text/css" rel=stylesheet href="/app/app.css" >
+    <link type="text/css" rel=stylesheet href="/app/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="/app/bower_components/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<div ng-controller="CompileSampleController">
+<div class="container">
+ <h2>Compile Event</h2>
+<hr />
+    <div id="appendHere"></div>
+    
+    <form class="form">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" ng-model="name">
+  </div>
+  <div class="form-group">
+    <label for="markup">Markup:</label>
+    <input type="text" class="form-control" id="markup" ng-model="markup">
+  </div>
+  <button type="button" class="btn btn-default" ng-click="appendDiv(markup)">Append</button>
+</form>  
+<br />   
+    
+</div>  
+    
+    
+   <script src="/app/bower_components/angular/angular.min.js"></script>
+   <script src="/app/bower_components/angular-resource/angular-resource.min.js"></script>
+    <!--Modules-->
+    <script src="/app/app.js"></script>
+    
+    <!--Controllers-->
+    <script src="CompileSampleController.js"></script> 
+    
+    <!--Services--> 
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+ {
+   "event" : {
+    "name" : "Angular Boot Camp",
+    "date" : "16th sept, 2015",
+    "time" : "10.30 am",
+    "location" : {
+        "address" : "Kormangla",
+        "city"    : "Bangalore",
+        "province" : " Karnataka"
+    },
+    "sessions" : [
+        { "name" : "Abhijit",
+          "topic" : "Directives",
+         "duration" : 1,
+         "upVoteCount" : 0
+        },
+        {
+            "name":"Avinash",
+            "topic":"Controllers",
+            "duration" : 2,
+            "upVoteCount" : 0
+        },
+        {
+            "name": "Punya",
+            "topic" : "Routing",
+            "duration": 4,
+            "upVoteCount" : 0
+        }]
+     }
+  }

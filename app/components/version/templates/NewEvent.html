@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="eventsApp">
-<head>
-    <meta charset="utf-8" >
-    <title>Event Registration</title>
-    <link type="text/css" rel=stylesheet href="/app/app.css" >
-    <link type="text/css" rel=stylesheet href="/app/bower_components/bootstrap/dist/css/bootstrap.css">
-</head>
-<body>
-<div ng-controller="EditEventController">
+<div >
 <div class="container">
 <h2>New Event</h2>
 <hr />
@@ -33,23 +24,9 @@
   </div>
   <button type="submit" ng-click="saveEvent(event)" class="btn btn-default">Submit</button>
   <button type="button" ng-click="cancelEvent(event)" class="btn btn-default">Cancel</button>
+  <button type="button" ng-click="reloadEvent()" class="btn btn-default">Reload</button>
 </form>
     
-    
 </div>
-    
-<script src="/app/bower_components/angular/angular.min.js"></script>
-<script src="/app/bower_components/angular-resource/angular-resource.min.js"></script>
- 
-    <!--Modules-->
-    <script src="/app/app.js" ></script>
-    
-    <!--Controllers-->
-    <script src="EditEventController.js"></script> 
-    
-    <!--Services-->
-    <script src="/app/components/version/eventData.js"></script>
-
 </div>  
-</body>    
-</html>
+

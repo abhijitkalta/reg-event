@@ -1,40 +1,29 @@
-eventsApp.controller('EventController', ['$scope', function($scope) {
+eventsApp.controller('EventController', 
+    function EventController($scope,eventData, $route) {
     
-    $scope.sortorder = 'topic';
-    $scope.event = {
-    name : 'Angular Boot Camp',
-    date : ' 16th sept, 2015',
-    time : ' 10.30 am',
-    location : {
-        address : ' Kormangla',
-        city    : ' Bangalore',
-        province : ' Karnataka'
-    },
-    sessions : [
-        { name : 'Abhijit',
-          topic : 'Directives',
-         duration : 1,
-         upVoteCount : 0
-        },
-        {
-            name:'Avinash',
-            topic:'Controllers',
-            duration : 2,
-            upVoteCount : 0
-        },
-        {
-            name: 'Punya',
-            topic : 'Routing',
-            duration: 4,
-            upVoteCount : 0
-        }]
-    };
+    //console.log($route.current.params.foo); // to access custom route param
+    $scope.sortorder = 'name';
+//    var promise = eventData.getEvent();
+//   
+//    promise.then(function(event) {
+//    $scope.event = event;
+//    }, function(event) {
+//    alert(event );
+//    });
+    var promise = eventData.getEvent();
+    
+    promise.then(function(event) {
+    $scope.event = event.event;
+    }, function(event) {
+        console.log(event);
+    alert("Failed");
+    });
     
     $scope.upVoteSession = function(session){
         session.upVoteCount++;
     };
     
-}]);
+});
 
 
 
